@@ -1,17 +1,17 @@
 # Basic Starter Drupal setup with ddev commands.
-mkdir my-drupalsite
-cd drupalsite
-ddev config --project-type=drupal10 --docroot=web --create-docroot
-ddev start
-ddev composer create drupal/recommended-project
-ddev composer require drush/drush
-ddev drush site:install --account-name=admin --account-pass=admin -y
-ddev drush uli
-ddev launch
-composer require drupal/next
+- mkdir my-drupalsite
+- cd drupalsite
+- ddev config --project-type=drupal10 --docroot=web --create-docroot
+- ddev start
+- ddev composer create drupal/recommended-project
+- ddev composer require drush/drush
+- ddev drush site:install --account-name=admin --account-pass=admin -y
+- ddev drush uli
+- ddev launch
+- composer require drupal/next
+- Open composer.json and add the following patches inside "extra"
 
-Open composer.json and add the following patches inside extra
-
+```php
  "patches": {
         "drupal/subrequests": {
             "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch"
@@ -20,20 +20,21 @@ Open composer.json and add the following patches inside extra
             "Unable to resolve path on node in other language than default": "https://www.drupal.org/files/issues/2022-11-30/decouple_router-3111456-resolve-language-issue-58.patch"
         }
     },  
+```
+- Then run composer require cweagans/composer-patches
 
-Then run - composer require cweagans/composer-patches
+- Path alias set - admin/config/search/path/patterns/add
 
-Path alias set - admin/config/search/path/patterns/add
 
 # Basic Starter Next JS setup.
 
-Create a next js app 
+- Create a next js app 
 
-Rename .env.example to .env.local (Add http for accessing local url, it might cause issue at times, or else set headers)
+- Rename .env.example to .env.local (Add http for accessing local url, it might cause issue at times, or else set headers)
 
-Add Drupal site link for both image and Drupal Base which would seve as a base url for API connection
+- Add Drupal site link for both image and Drupal Base which would seve as a base url for API connection
 
-Run yarn dev and see the magic :) 
+- Run yarn dev and see the magic :) 
 
 ## Documentation source
 
