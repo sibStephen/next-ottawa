@@ -23,7 +23,7 @@
 ```
 - Then run composer require cweagans/composer-patches
 
-- Path alias set - admin/config/search/path/patterns/add
+- Path alias set - admin/config/search/path/patterns/add  (Example - blog/[node:title])
 
 
 # Basic Starter Next JS setup.
