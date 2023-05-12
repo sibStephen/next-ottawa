@@ -28,7 +28,7 @@
 
 # Basic Starter Next JS setup.
 
-- Create a next js app 
+- Create a next js app - npx create-next-app -e https://github.com/chapter-three/next-drupal-basic-starter (Refer - https://next-drupal.org/learn/quick-start/create-nexts-project).
 
 - Rename .env.example to .env.local (Add http for accessing local url, it might cause issue at times, or else set headers)
 
